@@ -73,6 +73,22 @@ test
   .open('http://doctor.thedoctor.com/doctor')
   .assert.doesntExist('#the-master', 'The master elemnet has not been seen')
   .done();
+  
+ 
+ test
+  .open('http://dalekjs.com/guineapig/')
+  .assert_attr('#dtaDiv').is.not('data-spot', 'doc', 'Spotis not a dog!')
+  .done();
+  
+test
+  .open('http://dalekjs.com/guineapig/')
+  .assert.attr('#dataDiv', 'class', 'wellImUpperUpperClassHighSociety')
+  .done();
+
+test
+  .open('http://dalekjs.com/guineapig/')
+  .assert.attr('#dataDiv', 'class').to.contain('upperUpperClass')
+  .done();
 ```
 
 ```css
